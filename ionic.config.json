@@ -1,0 +1,7 @@
+{
+  "name": "nect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
