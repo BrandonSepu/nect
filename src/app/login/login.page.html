@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="black">
+        <ion-buttons slot="start">
+          <ion-button [routerLink]="['/home']">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" class="fondologin">
+
+      <ion-slide class='fondologin'>
+         <form class="form">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcvfSlef5AjJiu2zmQCq8v4kRDfuYCy_1QgPXtQ4KVk4adGjknk3XbTJR4P0hGFrk-qsI&usqp=CAU">
+            <br>
+            <ion-item >
+                  <ion-label position="floating">E-mail</ion-label>
+                  <ion-input type="text" placeholder="Ej: Usuario@gmail.com" #txtemail></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+                  <ion-label position="floating">Contraseña</ion-label>
+                  <ion-input type="password" placeholder="*********" #txtpassword></ion-input>
+            </ion-item>
+            <hr>
+            <ion-button (click) = "login(txtemail, txtpassword)" expand="block">
+                  Iniciar sesion
+            </ion-button>
+            <hr>
+            <ion-col>
+                  <ion-router-link href="/recuperarclave" class="underline link">Olvidaste tu contraseña?</ion-router-link>
+            </ion-col>
+         </form>
+      </ion-slide>
+
+
+</ion-content>

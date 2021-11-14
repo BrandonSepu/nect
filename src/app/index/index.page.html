@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="black">
+    <ion-toolbar color="black">
+        <ion-buttons slot="start">
+          <ion-button [routerLink]="['/home']">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title class="titutotoolbar">inicio</ion-title>
+  </ion-toolbar>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" class='bgimagen'>
+
+  <ion-slide class='bgimagen'>
+    
+    <div class="slide">
+    <h1>Bienvenido</h1>
+        <div id="map"></div>
+        <!--<img class='imgRedonda' src="https://thumbs.dreamstime.com/b/icono-o-logotipo-del-coche-de-carreras-f%C3%B3rmula-en-fondo-oscuro-132951929.jpg"/>
+        -->
+        <hr>
+        <form class="form">
+        <ion-item >
+          <ion-label  position="floating">Destino</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label position="floating">Punto partida</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        </form>
+
+        <ion-button [routerLink]="['/conductores']">Conductores disponibles</ion-button>
+
+      <ion-route url="/speakers" component="tab-speaker">
+        <ion-route component="page-speaker-list"></ion-route>
+        <ion-route url="/session/:sessionId" component="page-session"></ion-route>
+        <ion-route url="/:speakerId" component="page-speaker-detail"></ion-route>
+      </ion-route>
+    </div>
+  </ion-slide>
+</ion-content>

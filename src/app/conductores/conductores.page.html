@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="black">
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/index']">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>conductores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Conductores Disponibles</h2>
+  <div >
+    <ion-list>
+      <div *ngFor="let item of listadoUser">
+        <ion-item>
+          <ion-label>
+            nombre: {{item[0].username}}
+          </ion-label>
+          <ion-label>
+            celular: {{item[0].celular}}
+          </ion-label>
+          <ion-button [routerLink]="['/index']">Solicitar</ion-button>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

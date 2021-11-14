@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen class="ion-padding" class='bgimagen'>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-slide class='bgimagen'>
+          <div class="slide">
+            <h2>CONECTWORLD</h2>
+            <div class="square">
+              <img class='imgRedonda' src="https://thumbs.dreamstime.com/b/icono-o-logotipo-del-coche-de-carreras-f%C3%B3rmula-en-fondo-oscuro-132951929.jpg"/>
+            </div>  
+              <p>La aplicación <b>CONECTWORLD</b> te llevará seguro</p>
+            <ion-button [routerLink]="['/registro']">
+              Comencémos
+            </ion-button>
+            </div>
+    </ion-slide>
+    
+    <ion-fab vertical="top"  horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-fab-button [routerLink]="['/registro']"><ion-icon name="person-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button [routerLink]="['/conductores']"><ion-icon name="document-text-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button [routerLink]="['/login']"><ion-icon name="clipboard-outline"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
 </ion-content>
