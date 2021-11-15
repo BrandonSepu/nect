@@ -40,7 +40,7 @@ export class CrudService {
     return listado;
   }
 
-  eliminar(key: string){
+  eliminar(key: any){
     this.storage.remove(key);
   }
 

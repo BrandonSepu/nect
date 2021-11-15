@@ -2,11 +2,13 @@
   <ion-toolbar color="black">
     <ion-toolbar color="black">
         <ion-buttons slot="start">
-          <ion-button [routerLink]="['/home']">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </ion-button>
+          <ion-title class="titutotoolbar">inicio</ion-title>
+          <ion-title class="titutotoolbar" *ngFor="let item of users">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            {{item.user}}
+          </ion-title>
         </ion-buttons>
-        <ion-title class="titutotoolbar">inicio</ion-title>
+        
   </ion-toolbar>
       
   </ion-toolbar>

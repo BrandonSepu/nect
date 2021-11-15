@@ -16,12 +16,15 @@
       <div *ngFor="let item of listadoUser">
         <ion-item>
           <ion-label>
-            nombre: {{item[0].username}}
+            <ion-icon name="car-sport-outline"></ion-icon>
+            {{item[0].username}}
           </ion-label>
           <ion-label>
-            celular: {{item[0].celular}}
+            <ion-icon name="call-outline" #txtcelular></ion-icon>
+            {{item[0].celular}}
           </ion-label>
-          <ion-button [routerLink]="['/index']">Solicitar</ion-button>
+          <ion-button color="success" [routerLink]="['/index']">Solicitar</ion-button>
+          <ion-button color="danger" (click)="eliminar(1)" >Bloquear</ion-button>
         </ion-item>
       </div>
     </ion-list>

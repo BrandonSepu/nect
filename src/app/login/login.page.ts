@@ -37,6 +37,8 @@ export class LoginPage implements OnInit {
           position: "middle"
         })
         mtoast.present();
+        const tokenUser = data[0].username;
+        localStorage.setItem("user", tokenUser)
       }else{
         const mtoast = await this.toast.create({
           message: "Clave o Usuario invalido, intenta nuevamente",

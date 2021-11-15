@@ -18,11 +18,23 @@ export class ConductoresPage implements OnInit {
 
   async listar(){
     this.listadoUser = this.crud.listar();
+    return this.listadoUser;
   }
   ngOnInit() {
     
   }
   
+  async eliminar(txtcelular: HTMLLabelElement){
+    this.listadoUser.forEach((value, key, i) => {
+      console.log(this.listadoUser[key])
+      if(txtcelular === this.listadoUser[key].celular){
+        const cel = txtcelular;
+      }else{
+        console.log("error al eliminar")
+      }
+
+    });
+  }
 
 
 }
