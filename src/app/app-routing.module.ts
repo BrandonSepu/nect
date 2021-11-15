@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'index',
     loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
   },
+  {
+    path: 'editclave',
+    loadChildren: () => import('./editclave/editclave.module').then( m => m.EditclavePageModule)
+  },
 ];
 
 @NgModule({
