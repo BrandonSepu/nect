@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../crud.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-conductores',
@@ -10,7 +11,8 @@ import { ToastController } from '@ionic/angular';
 export class ConductoresPage implements OnInit {
 
   constructor(private crud: CrudService,
-              private toast: ToastController) {
+              private toast: ToastController,
+              private router: Router) {
                 this.listar();
               }
 
@@ -25,14 +27,32 @@ export class ConductoresPage implements OnInit {
   }
   
   async eliminar(txtcelular: HTMLLabelElement){
-    this.listadoUser.forEach((value, key, i) => {
-      console.log(this.listadoUser[key])
-      if(txtcelular === this.listadoUser[key].celular){
-        const cel = txtcelular;
-      }else{
-        console.log("error al eliminar")
-      }
+    this.listadoUser.forEach(async (value, key, i) => {
+      //console.log(value[0].celular)
+      if(txtcelular.textContent == value[0].celular.textContent){
+        const email = value[0].email;
+        console.log("funciona: "+ email)
+        this.crud.eliminar(email);
 
+        const mtoast = await this.toast.create({
+          message: "Conductor Bloqueado para siempre",
+          duration: 2000,
+          color: "success",
+          position: "middle"
+        })
+        mtoast.present();
+        this.router.navigate(["/index"]);
+
+      }else{
+        const mtoast = await this.toast.create({
+          message: "Error al Bloquear conductor",
+          duration: 2000,
+          color: "danger",
+          position: "middle"
+        })
+        mtoast.present();
+      }
+      
     });
   }
 
