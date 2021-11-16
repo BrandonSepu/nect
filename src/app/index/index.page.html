@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-toolbar color="black">
         <ion-buttons slot="start">
           <ion-title class="titutotoolbar">inicio</ion-title>
           <ion-title class="titutotoolbar" *ngFor="let item of users">
@@ -10,16 +9,13 @@
         </ion-buttons>
         <ion-button (click)="salir()">Salir</ion-button>
   </ion-toolbar>
-      
-  </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="ion-padding" class='fondologin'>
-
   <ion-slide class='fondologin'>
-    <div class="slide">
         <form class="form">
         <img class="mapa" src="assets/mapa.jpg">
+        <br>
         <br>
         <ion-item >
           <ion-label  position="floating">Destino</ion-label>
@@ -30,16 +26,14 @@
           <ion-label position="floating">Punto partida</ion-label>
           <ion-input></ion-input>
         </ion-item>
-        </form>
         <br>
         <ion-button [routerLink]="['/conductores']">Conductores disponibles</ion-button>
+        </form>
 
       <ion-route url="/speakers" component="tab-speaker">
         <ion-route component="page-speaker-list"></ion-route>
         <ion-route url="/session/:sessionId" component="page-session"></ion-route>
         <ion-route url="/:speakerId" component="page-speaker-detail"></ion-route>
       </ion-route>
-    </div>
-
   </ion-slide>
 </ion-content>
