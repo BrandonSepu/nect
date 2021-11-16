@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="black">
+  <ion-toolbar color="primary">
     <ion-toolbar color="black">
         <ion-buttons slot="start">
           <ion-title class="titutotoolbar">inicio</ion-title>
@@ -14,17 +14,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class="ion-padding" class='bgimagen'>
+<ion-content fullscreen class="ion-padding" class='fondologin'>
 
-  <ion-slide class='bgimagen'>
-    
+  <ion-slide class='fondologin'>
     <div class="slide">
-    <h1>Bienvenido</h1>
-        <div id="map"></div>
-        <!--<img class='imgRedonda' src="https://thumbs.dreamstime.com/b/icono-o-logotipo-del-coche-de-carreras-f%C3%B3rmula-en-fondo-oscuro-132951929.jpg"/>
-        -->
-        <hr>
         <form class="form">
+        <img class="mapa" src="assets/mapa.jpg">
+        <br>
         <ion-item >
           <ion-label  position="floating">Destino</ion-label>
           <ion-input></ion-input>
@@ -35,7 +31,7 @@
           <ion-input></ion-input>
         </ion-item>
         </form>
-
+        <br>
         <ion-button [routerLink]="['/conductores']">Conductores disponibles</ion-button>
 
       <ion-route url="/speakers" component="tab-speaker">
@@ -44,5 +40,6 @@
         <ion-route url="/:speakerId" component="page-speaker-detail"></ion-route>
       </ion-route>
     </div>
+
   </ion-slide>
 </ion-content>

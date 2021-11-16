@@ -1,21 +1,19 @@
 <ion-header>
-  <ion-toolbar color="black">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-button [routerLink]="['/index']">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
-    </ion-buttons>
-    <ion-title>conductores</ion-title>
+    </ion-buttons><h2>Conductores Disponibles</h2>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h2>Conductores Disponibles</h2>
-  <div >
-    <ion-list>
-      <div *ngFor="let item of listadoUser">
-        <ion-item>
-          <ion-label>
+  <div>
+    <ion-list class="fondologin">
+      <div *ngFor="let item of listadoUser" class="fondologin">
+        <ion-item class="fondologin">
+          <ion-label >
             <ion-icon name="car-sport-outline"></ion-icon>
             {{item[0].username}}
           </ion-label>

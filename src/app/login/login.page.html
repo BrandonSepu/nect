@@ -5,16 +5,14 @@
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title >Login</ion-title>
+        <ion-title class="tittlelogin" >Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen class="ion-padding" class="fondologin">
-
       <ion-slide class='fondologin'>
          <form class="form">
-            
-           
+            <img class="logologin" src="assets/logologin.jpg">
             <ion-item class="item">
                   <ion-label position="floating">E-mail</ion-label>
                   <ion-input type="text" placeholder="Ej: Usuario@gmail.com" #txtemail></ion-input>
@@ -24,13 +22,13 @@
                   <ion-label position="floating">Contraseña</ion-label>
                   <ion-input color="light" type="password" placeholder="*********" #txtpassword></ion-input>
             </ion-item>
-            <hr>
+            <br>
             <ion-button color="secondary" (click) = "login(txtemail, txtpassword)" expand="block">
                   Iniciar sesion
             </ion-button>
             <hr>
             <ion-col >
-                  <ion-router-link  href="/recuperarclave" class="underlinelink">Olvidaste tu contraseña?</ion-router-link>
+                  <ion-router-link  href="/editclave" class="underlinelink">Olvidaste tu contraseña?</ion-router-link>
             </ion-col>
             <hr>
             <ion-button color="secondary" class="boton" [routerLink]="['/registro']">

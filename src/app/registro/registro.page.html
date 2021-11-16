@@ -1,20 +1,19 @@
 <ion-header>
-  <ion-toolbar color="black">
+  <ion-toolbar color="primary">
         <ion-buttons slot="start">
           <ion-button [routerLink]="['/login']">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>Registro de Usuario</ion-title>
+        <ion-title class="tittlelogin" >Registro de Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class="ion-padding" class="fondologin">
-
-      <ion-slide class='fondologin'>
-         <form class="form">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcvfSlef5AjJiu2zmQCq8v4kRDfuYCy_1QgPXtQ4KVk4adGjknk3XbTJR4P0hGFrk-qsI&usqp=CAU">
-            <ion-item >
+<ion-content fullscreen class="ion-padding" class='fondologin' >
+      <ion-slide class='fondologin' >
+         <form class="form" >
+            <img class="logoregistro" src="assets/logoregistro.png">
+            <ion-item class="item" >
                   <ion-label position="floating">Nombre y Apellido</ion-label>
                   <ion-input type="text" placeholder="Ej: Dayan Castro" #txtusername></ion-input>
             </ion-item>
@@ -38,13 +37,18 @@
                   <ion-label position="floating">Contraseña</ion-label>
                   <ion-input type="password" placeholder="*********" #txtpassword></ion-input>
             </ion-item>
-            <hr>
             <ion-button (click) = "agregar(txtusername, txtemail, txtrut, txtcelular, txtpassword)" expand="block">
                   Registrar
             </ion-button>
-            <hr>
          </form>
       </ion-slide>
 
 
 </ion-content>
+
+
+
+
+
+
+

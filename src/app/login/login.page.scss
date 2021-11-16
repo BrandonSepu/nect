@@ -1,15 +1,25 @@
 .fondologin{ 
-   // background-image: url('../../assets/fondoregistro.jpg');
-    background-color: rgb(255, 255, 255);
-  }
+  // background-image: url('../../assets/fondoregistro.jpg');
+   background-color: rgb(255, 255, 255);
+ }
 .item{
-    width:250px;
-    height:50px;
-    border-radius: 200px;
-    background-color: azure;
-
+   width:250px;
+   height: 50px;
+   border-radius: 200px;
+   background-color: azure;
+   color: white;
 }
 
 .boton{
-    border-radius: 200px;
+   border-radius: 200px;
+}
+
+.logologin{
+ width:200px;
+   height:200px;
+   border-radius:50px;
+}
+
+.tittlelogin{
+ align-content: center;
 }
