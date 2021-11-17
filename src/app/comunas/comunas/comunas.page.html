@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
         <ion-buttons slot="start">
-          <ion-button [routerLink]="['/index']">
+          <ion-button [routerLink]="['/registro']">
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -20,7 +20,7 @@
       
       <ion-label class="label" >
       <ion-icon name="star-half-outline"></ion-icon>{{comuna.level}}</ion-label>
-      <ion-button>Elige tu avatar</ion-button>
+      <ion-button [routerLink]="['/registro']">Elijo este avatar</ion-button>
     </ion-item>
   </ion-list>
 

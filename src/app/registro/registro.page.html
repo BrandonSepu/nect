@@ -42,6 +42,10 @@
             <ion-button (click) = "agregar(txtusername, txtemail, txtrut, txtcelular, txtpassword)" expand="block">
                   Registrar
             </ion-button>
+            <ion-button  color="primary"[routerLink]="['/comunas']">
+              <ion-icon name="game-controller-outline"></ion-icon>
+              <ion-label>Selecciona tu avatar</ion-label>
+            </ion-button>
          </form>
       </ion-slide>
 </ion-content>

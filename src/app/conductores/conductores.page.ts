@@ -33,6 +33,20 @@ export class ConductoresPage implements OnInit {
     
   }
   
+  username = "";
+  email = "";
+  rut = "";
+  celular = "";
+  async search(txtemail2: HTMLInputElement){
+    
+    const user = await this.crud.rescatar(txtemail2.value);
+    this.username = user[0].username;
+    this.email = user[0].email;
+    this.rut = user[0].rut;
+    this.celular = user[0].celular;
+    txtemail2.value = "";
+  }
+
   async eliminar(txtemail: HTMLInputElement){
       console.log(txtemail.value)
       try{
