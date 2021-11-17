@@ -8,7 +8,7 @@ import { Animation, AnimationController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(private animationCtrl:AnimationController) {}
+  constructor(private animationCtrl:AnimationController) {localStorage.clear();}
 
   ngAfterViewInit(){
     const animation = this.animationCtrl

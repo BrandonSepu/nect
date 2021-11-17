@@ -12,45 +12,61 @@ export class LoginPage implements OnInit {
 
   constructor(private crud: CrudService,
               private toast: ToastController,
-              private router: Router) { }
+              private router: Router) { 
+                
+              }              
 
   ngOnInit() {
+    localStorage.clear();
   }
 
+  tokenEmail = "";
+  tokenPass = "";
 
   async login(txtemail: HTMLInputElement, txtpassword: HTMLInputElement){
-    let stop = false;
-    if (txtemail.value && txtpassword.value){
-      const tokenEmail = txtemail.value;
-      const tokenPass = txtpassword.value;
-      localStorage.setItem("email", tokenEmail)
-      localStorage.setItem("pass", tokenPass)
-
-      const data = await this.crud.rescatar(tokenEmail);
-
-      if(data[0].password == tokenPass){
-        this.router.navigate(["/index"]);
-        const mtoast = await this.toast.create({
-          message: "Bienvenido "+ data[0].username,
-          duration: 2000,
-          color: "success",
-          position: "middle"
-        })
-        mtoast.present();
-        const tokenUser = data[0].username;
-        localStorage.setItem("user", tokenUser)
+    try{
+      if (txtemail.value && txtpassword.value){
+        this.tokenEmail = txtemail.value;
+        this.tokenPass  = txtpassword.value;
+        
+        const data = await this.crud.rescatar(this.tokenEmail);
+        
+        if(data[0].password == this.tokenPass){
+          
+          const tokenUser = data[0].username;
+          localStorage.setItem("user", tokenUser)
+          localStorage.setItem("email", this.tokenEmail)
+          localStorage.setItem("pass", this.tokenPass)
+          this.router.navigate(["/index"]);
+          const mtoast = await this.toast.create({
+            message: "Bienvenido "+ data[0].username,
+            duration: 2000,
+            color: "success",
+            position: "middle"
+          })
+          mtoast.present();
+        }else{
+          const mtoast = await this.toast.create({
+            message: "Clave o Usuario invalido, intenta nuevamente",
+            duration: 2000,
+            color: "danger",
+            position: "middle"
+          })
+          mtoast.present();
+        }
       }else{
         const mtoast = await this.toast.create({
-          message: "Clave o Usuario invalido, intenta nuevamente",
+          message: "Falta un campo por llenar :c",
           duration: 2000,
           color: "danger",
           position: "middle"
         })
         mtoast.present();
       }
-    }else{
+    }catch(e){
+      console.log(e);
       const mtoast = await this.toast.create({
-        message: "Falta un campo por llenar :c",
+        message: "Clave o Usuario invalido, intenta nuevamente",
         duration: 2000,
         color: "danger",
         position: "middle"
@@ -58,5 +74,4 @@ export class LoginPage implements OnInit {
       mtoast.present();
     }
   }
-
 }

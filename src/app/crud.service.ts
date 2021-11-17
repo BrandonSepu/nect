@@ -40,6 +40,14 @@ export class CrudService {
     return listado;
   }
 
+  listarEmail(){
+    const listado = [];
+    this.storage.forEach((value, key, i) => {
+      listado.push(value[0].email);
+    });
+    return listado;
+  }
+
   eliminar(key: any){
     this.storage.remove(key);
   }

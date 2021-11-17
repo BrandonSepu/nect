@@ -11,18 +11,25 @@
 <ion-content>
   <div>
     <ion-list class="fondologin">
-      <div *ngFor="let item of listadoUser" class="fondologin">
+      <div *ngFor="let item of listadoUser; let indice=index" class="fondologin">
         <ion-item class="fondologin">
-          <ion-label >
-            <ion-icon name="car-sport-outline"></ion-icon>
+          <ion-input disabled="true" #indice>
+            {{indice}}
+          </ion-input>
+          <ion-icon name="car-sport-outline"> </ion-icon>
+          <ion-input disabled="true">
             {{item[0].username}}
-          </ion-label>
-          <ion-label>
-            <ion-icon name="call-outline" #txtcelular></ion-icon>
+          </ion-input>
+          <ion-input disabled="true">
+            <ion-icon name="call-outline"></ion-icon>
             {{item[0].celular}}
-          </ion-label>
+          </ion-input>
+          <!--<ion-icon name="at-outline"></ion-icon>
+          <ion-input disabled="true" #txtemail>
+            {{item[0].email}}
+          </ion-input>-->
           <ion-button color="success" [routerLink]="['/index']">Solicitar</ion-button>
-          <ion-button color="danger" (click)="eliminar(txtcelular)" >Bloquear</ion-button>
+          <ion-button color="danger" (click)="eliminar(indice)" >Bloquear</ion-button>
         </ion-item>
       </div>
     </ion-list>

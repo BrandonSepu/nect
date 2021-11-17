@@ -18,8 +18,16 @@ export class RegistroPage implements OnInit {
   ngOnInit() {
   }
 
+  listadoUser = [];
+
+  async listar(){
+    this.listadoUser = this.crud.listar();
+    return this.listadoUser;
+  }
+
   async agregar(txtusername: HTMLInputElement, txtemail: HTMLInputElement, txtrut: HTMLInputElement, txtcelular: HTMLInputElement, txtpassword: HTMLInputElement){
-    
+
+
     if (txtcelular.value && txtemail.value && txtpassword.value && txtrut.value && txtusername.value){
       if(txtcelular.value.length != 9){
         const mtoast = await this.toast.create({
