@@ -5,16 +5,15 @@
             <ion-icon name="arrow-back-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>Recuperar clave</ion-title>
+        <ion-title class="tittlelogin" >Cambio de Clave</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class="ion-padding" class="fondologin">
-
-      <ion-slide class='fondologin'>
-         <form class="form">
-            <img class="logoedit" src="assets/editclave.png">
-            <ion-item class="item" >
+<ion-content fullscreen class="ion-padding" class='fondologin' >
+      <ion-slide class='fondologin' >
+         <form class="form" >
+            <img class="logoregistro" src="assets/logoregistro.png">
+            <ion-item >
                   <ion-label position="floating">E-mail</ion-label>
                   <ion-input type="text" placeholder="Ej: Usuario@gmail.com" #txtemail></ion-input>
             </ion-item>
@@ -23,13 +22,10 @@
                   <ion-label position="floating">Contraseña</ion-label>
                   <ion-input type="password" placeholder="*********" #txtpassword></ion-input>
             </ion-item>
-            <hr>
-            <ion-button (click) = "agregar(txtusername, txtemail, txtrut, txtcelular, txtpassword)" expand="block">
-                  Actualizar
+            <br>
+            <ion-button (click) = "edit(txtemail, txtpassword)" expand="block">
+                  Cambiar contraseña
             </ion-button>
-            <hr>
          </form>
       </ion-slide>
-
-
 </ion-content>

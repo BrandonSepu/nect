@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../crud.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { Parser } from '@angular/compiler/src/ml_parser/parser';
 
 
 @Component({
@@ -19,7 +18,7 @@ export class ConductoresPage implements OnInit {
               }
 
   listadoUser = [];
-  listadoUserEmail = [];
+  //listadoUserEmail = [];
   contador = 0;
 
   refresh() {
@@ -34,36 +33,40 @@ export class ConductoresPage implements OnInit {
     
   }
   
-  async eliminar(indice: HTMLInputElement){
-    console.log(indice)
-    this.listadoUserEmail = this.crud.listarEmail();
-    console.log(this.listadoUserEmail);
-    /*this.listadoUser.forEach(async (value, key, i) => {
-      
-      /*if(txtemail == value[0].email){
-        //const email = value[0].email;
-        console.log("funciona: "+ txtemail)
-        this.crud.eliminar(txtemail.textContent);
-
+  async eliminar(txtemail: HTMLInputElement){
+      console.log(txtemail.value)
+      try{
+        const user = await this.crud.rescatar(txtemail.value)
+        if(user){
+          console.log("funciona: "+ user[0].email)
+          await this.crud.eliminar(user[0].email);
+  
+          const mtoast = await this.toast.create({
+            message: "Conductor Bloqueado para siempre",
+            duration: 2000,
+            color: "success",
+            position: "middle"
+          })
+          mtoast.present();
+          this.router.navigate(["/index"]);
+        }else{
+          const mtoast = await this.toast.create({
+            message: "Error al Bloquear conductor",
+            duration: 2000,
+            color: "danger",
+            position: "middle"
+          })
+          mtoast.present();
+        }
+      }catch(e){
+        console.log(e);
         const mtoast = await this.toast.create({
-          message: "Conductor Bloqueado para siempre",
-          duration: 2000,
-          color: "success",
-          position: "middle"
-        })
-        mtoast.present();
-      }else{
-        const mtoast = await this.toast.create({
-          message: "Error al Bloquear conductor",
+          message: "Error al Bloquear conductor, ingresa el email otra vez",
           duration: 2000,
           color: "danger",
           position: "middle"
         })
         mtoast.present();
       }
-      //this.router.navigate(["/index"]);
-    });*/
   }
-
-
 }
