@@ -11,8 +11,8 @@
 <ion-content class='fondologin'>
   <div class='fondologin'>
       <ion-list class="fondologin">
-        <div *ngFor="let item of listadoUser; let indice=index" class="fondologin">
-          <ion-item class="item">
+        <div *ngFor="let item of listadoUser; let indice=index" >
+          <ion-item>
             #{{indice}}
             <ion-input type="number" disabled="true" >
               {{item[0].id}}
@@ -67,7 +67,7 @@
             </ion-item>
             <br>
             <div class='fondologin'>
-              <ion-item class="" *ngIf="email">
+              <ion-item class="" *ngIf="email" #input>
                 <ion-input type="text">nombre: {{username}}</ion-input>
                 <ion-input type="text">email: {{email}}</ion-input>
                 <ion-input type="text">rut: {{rut}}</ion-input>
@@ -76,8 +76,8 @@
               <br>
             </div>
             <ion-button (click) = "search(txtemail2)" expand="block" color="primary">
-              <ion-icon name="close-circle-outline"></ion-icon>
-              Info del conductor
+              <ion-icon name="newspaper-outline"></ion-icon>
+               Info del conductor
             </ion-button>
          </form>
       </ion-slide>
