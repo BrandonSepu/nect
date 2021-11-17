@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ComunaService {
-  url = 'https://jsonplaceholder.typicode.com/todos'
+  url = 'https://digimon-api.vercel.app/api/digimon'
 
   constructor(private http: HttpClient) { }
 

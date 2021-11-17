@@ -12,16 +12,19 @@
 <ion-content color="black">
   <ion-list class="lista">
     <ion-item color="black"  *ngFor="let comuna of comunas">
-      <ion-icon class="label"  name="accessibility-outline"></ion-icon>
-      <ion-label class="label" color="black">{{comuna.userId}}</ion-label>
-      <ion-icon class="label" name="person-circle-outline"></ion-icon>
-      <ion-label class="label" >{{comuna.id}}</ion-label>
-      <ion-icon  class="label"  name="car-sport-outline"></ion-icon>
-      <ion-label class="label" >{{comuna.title}}</ion-label>
-      <ion-label class="label" >{{comuna.completed}}</ion-label>
-
+      <ion-label class="label" color="black">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      {{comuna.name}}
+      </ion-label>
+      <ion-img [src]= "comuna.img"></ion-img>
+      
+      <ion-label class="label" >
+      <ion-icon name="star-half-outline"></ion-icon>{{comuna.level}}</ion-label>
+      <ion-button>Elige tu avatar</ion-button>
     </ion-item>
   </ion-list>
+
+
 
   
 </ion-content>

@@ -1,7 +1,6 @@
 export interface comuna 
 {
-    "userId": number,
-    "id": number,
-    "title": string,
-    "completed": string
+    "name": number,
+    "img": number,
+    "level": string
 }
