@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-button [routerLink]="['/index']">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title class="tittlelogin" >lista de api rest</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="black">
+  <ion-list class="lista">
+    <ion-item color="black"  *ngFor="let comuna of comunas">
+      <ion-icon class="label"  name="accessibility-outline"></ion-icon>
+      <ion-label class="label" color="black">{{comuna.userId}}</ion-label>
+      <ion-icon class="label" name="person-circle-outline"></ion-icon>
+      <ion-label class="label" >{{comuna.id}}</ion-label>
+      <ion-icon  class="label"  name="car-sport-outline"></ion-icon>
+      <ion-label class="label" >{{comuna.title}}</ion-label>
+      <ion-label class="label" >{{comuna.completed}}</ion-label>
+
+    </ion-item>
+  </ion-list>
+
+  
+</ion-content>

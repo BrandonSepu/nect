@@ -30,7 +30,19 @@ const routes: Routes = [
   {
     path: 'editclave',
     loadChildren: () => import('./editclave/editclave.module').then( m => m.EditclavePageModule)
+  },  {
+    path: 'comunas',
+    loadChildren: () => import('./comunas/comunas/comunas.module').then( m => m.ComunasPageModule)
   },
+  {
+    path: 'agregar-comuna',
+    loadChildren: () => import('./comunas/agregar-comuna/agregar-comuna.module').then( m => m.AgregarComunaPageModule)
+  },
+  {
+    path: 'detalle-comuna',
+    loadChildren: () => import('./comunas/detalle-comuna/detalle-comuna.module').then( m => m.DetalleComunaPageModule)
+  },
+
 ];
 
 @NgModule({
